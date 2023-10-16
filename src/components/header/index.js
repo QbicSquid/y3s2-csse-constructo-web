@@ -16,7 +16,7 @@ export default function Header() {
         <div className="font-bold ">CONSTRUCT-LOGO</div>
       </div>
       <div className="flex items-center w-full h-full">
-        <Image src="/search.svg" width={20} height={20} alt="Search icon" className="mr-2"/>
+        <Image src="/icon_search.svg" width={20} height={20} alt="Search icon" className="mr-2"/>
         <input type="text" value={searchVal} onChange={handleSearchChange} placeholder="Quick search"/>
       </div>
     </div>

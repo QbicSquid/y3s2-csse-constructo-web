@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        custom_black: {
+          1: "#212121",
+        },
         custom_grey: {
           1: "#908F94",
           2: "#CBC9D6",
