@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SidebarButton from "./SidebarButton";
 
 export default function Sidebar() {
@@ -15,10 +16,22 @@ export default function Sidebar() {
       <SidebarButton name="payments" />
       <SidebarButton name="settings" />
       <div className="flex-grow" />
-      <div className="text-center">
-        <div className="font-normal"
-        >{today.getDate()}, {today.toLocaleDateString('default', {month: 'short'})} {today.getFullYear()}</div>
-        <div>C 2023</div>
+      <div className="text-center opacity-60">
+        <div className="text-sm italic font-normal">
+          {today.getDate()},{" "}
+          {today.toLocaleDateString("default", { month: "short" })}{" "}
+          {today.getFullYear()}
+        </div>
+        <div>
+          <Image
+            src="/sidebar/copyright_icon.svg"
+            width={10}
+            height={10}
+            alt="copyright icon"
+            className="inline mr-1"
+          />
+          <div className="inline text-xs ">2023</div>
+        </div>
       </div>
     </div>
   );
