@@ -1,20 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { getRequisitions, approveRequisition } from "@/firebase/requisitions";
 import Table from "@/components/content/Table";
 import TableRow from "@/components/content/TableRow";
 
 export default function Requisitions() {
-  const router = useRouter();
-  useEffect(() => {
-    const username = localStorage.getItem("username");
-    if (!username) {
-      router.push("/login");
-    }
-  }, []);
-
   const [requisitions, setRequisitions] = useState([]);
 
   useEffect(() => {

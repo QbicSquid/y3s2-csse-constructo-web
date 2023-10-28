@@ -1,8 +1,21 @@
+"use client"
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import "@/firebase/config/firebase.config";
 
 export default function RootLayout({ children }) {
+  const router = useRouter();
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log("user", user);
+    if (!user) {
+      // router.push("/login");
+    }
+  }, []);
+
   return (
     <div className="flex flex-col h-screen">
       <Header />
