@@ -23,7 +23,7 @@ export default function Orders() {
   }, []);
 
   return (
-    <Table headers={Object.keys(orders[0] || [])}>
+    <Table headers={Object.keys(orders[0] || {})}>
       {orders.map((order, index) => (
         <TableRow data={Object.values(order)} key={index} />
       ))}

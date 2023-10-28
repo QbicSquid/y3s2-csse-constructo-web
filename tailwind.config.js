@@ -21,6 +21,9 @@ module.exports = {
           2: "#EBF3FE",
           3: "#F8F7FC",
         },
+        custom_green: {
+          1: "#27AE61",
+        }
       },
     },
   },
