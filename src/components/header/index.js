@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const [searchVal, setSearchVal] = useState();
-  const username = localStorage.getItem('username');
+  const [username, setusername] = useState();
+  useEffect(() => {
+    setusername(localStorage.getItem("username"));
+  }, []);
 
   const handleSearchChange = (e) => {
     setSearchVal(e.target.value);
@@ -17,8 +20,19 @@ export default function Header() {
         <div className="font-bold ">CONSTRUCTO</div>
       </div>
       <div className="flex items-center w-full h-full">
-        <Image src="/icon_search.svg" width={20} height={20} alt="Search icon" className="mr-2"/>
-        <input type="text" value={searchVal} onChange={handleSearchChange} placeholder="Quick search"/>
+        <Image
+          src="/icon_search.svg"
+          width={20}
+          height={20}
+          alt="Search icon"
+          className="mr-2"
+        />
+        <input
+          type="text"
+          value={searchVal}
+          onChange={handleSearchChange}
+          placeholder="Quick search"
+        />
       </div>
       <div className="flex items-center w-fit">{username}</div>
     </div>

@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Table from "@/components/content/Table";
 import TableRow from "@/components/content/TableRow";
+import { getOrders } from "@/firebase/orders";
 
 export default function Orders() {
   const router = useRouter();
@@ -14,15 +15,18 @@ export default function Orders() {
     }
   }, []);
 
-  const headers = ["Order Code", "Description", "Date"];
+  const [orders, setOrders] = useState([]);
 
-  function Temp() {
-    return <div>oh well</div>;
-  }
+  useEffect(() => {
+    const fetchOrders = async () => setOrders(await getOrders());
+    fetchOrders();
+  }, []);
 
   return (
-    <Table headers={headers}>
-      <TableRow data={["theres", "some", Temp()]} />
+    <Table headers={Object.keys(orders[0] || [])}>
+      {orders.map((order, index) => (
+        <TableRow data={Object.values(order)} key={index} />
+      ))}
     </Table>
   );
 }

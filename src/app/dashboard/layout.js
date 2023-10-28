@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
+import "@/firebase/config/firebase.config";
 
 export default function RootLayout({ children }) {
   return (
