@@ -14,6 +14,7 @@ export default function Sidebar() {
       <SidebarButton name="orders" />
       <SidebarButton name="suppliers" />
       <SidebarButton name="requisitions" />
+      <SidebarButton name="inventory" />
       <SidebarButton name="settings" />
       <div className="flex-grow" />
       <div className="text-center opacity-60">
