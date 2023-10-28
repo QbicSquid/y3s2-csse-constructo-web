@@ -13,6 +13,7 @@ export default function Sidebar() {
       <SidebarButton name="people" />
       <SidebarButton name="orders" />
       <SidebarButton name="suppliers" />
+      <SidebarButton name="inventory" />
       <SidebarButton name="payments" />
       <SidebarButton name="settings" />
       <div className="flex-grow" />
