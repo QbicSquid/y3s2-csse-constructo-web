@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const [searchVal, setSearchVal] = useState();
-  const [username, setusername] = useState();
+  const [user, setUser] = useState();
   useEffect(() => {
-    setusername(localStorage.getItem("username"));
+    setUser(JSON.parse(localStorage.getItem("user")));
   }, []);
 
   const handleSearchChange = (e) => {
@@ -34,7 +34,7 @@ export default function Header() {
           placeholder="Quick search"
         />
       </div>
-      <div className="flex items-center w-fit">{username}</div>
+      <div className="flex items-center w-fit">{user?.name}</div>
     </div>
   );
 }
