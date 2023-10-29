@@ -23,7 +23,7 @@ export default function Login() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("username");
+    localStorage.removeItem("user");
   };
 
   return (
