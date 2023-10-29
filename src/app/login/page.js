@@ -22,10 +22,6 @@ export default function Login() {
     } else window.alert("Invalid email, password combination");
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-  };
-
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-md p-4 space-y-8">
@@ -78,12 +74,6 @@ export default function Login() {
         </form>
 
         <div className="flex items-center justify-between">
-          <button
-            onClick={handleLogout}
-            className="text-sm text-indigo-600 cursor-pointer hover:text-indigo-800"
-          >
-            Logout
-          </button>
           <a
             href="/register"
             className="text-sm text-indigo-600 cursor-pointer hover:text-indigo-800"

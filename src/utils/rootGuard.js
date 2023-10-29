@@ -1,3 +1,5 @@
+"use client"
+
 import { ROLES, ROLE_DASHBOARD_PATHS } from "@/constants/roles";
 
 const rootGuard = () => {
