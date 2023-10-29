@@ -1,4 +1,3 @@
-// import { useRouter } from "next/navigation";
 import { ROLES, ROLE_DASHBOARD_PATHS } from "@/constants/roles";
 
 const rootGuard = () => {
@@ -10,10 +9,9 @@ const rootGuard = () => {
   if (!isPathAllowed()) window.location.assign(`/dashboard/${allowedPaths[0]}`);
 };
 
-export const isPathAllowed = (explicitPath=null) => {
+export const isPathAllowed = (explicitPath = null) => {
   const fullPath = window.location.pathname;
   const path = explicitPath || fullPath.split("/")[2];
-  console.log(fullPath)
   const user = JSON.parse(localStorage.getItem("user"));
 
   const allowedPaths = ROLE_DASHBOARD_PATHS[user.role];

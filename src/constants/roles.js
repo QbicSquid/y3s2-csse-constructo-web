@@ -4,6 +4,6 @@ export const ROLES = {
 };
 
 export const ROLE_DASHBOARD_PATHS = {
-  [ROLES.supplier]: ["orders", "requisitions", "inventory", "settings"],
-  [ROLES.staff]: ["people", "suppliers", "settings"],
+  [ROLES.supplier]: ["orders", "inventory"],
+  [ROLES.staff]: ["orders", "requisitions", "people"],
 };

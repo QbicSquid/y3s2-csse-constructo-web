@@ -13,3 +13,9 @@ export const getUser = async (email, password) => {
   if (querySnapshot.docs.length > 0) return querySnapshot.docs[0].data();
   else return null;
 };
+
+export const getUsers = async () => {
+  const userSnapshot = await getDocs(userCollection);
+  const users = userSnapshot.docs.map((doc) => doc.data());
+  return users;
+}
